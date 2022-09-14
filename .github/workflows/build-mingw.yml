@@ -38,7 +38,7 @@ jobs:
             gcc --version &&
             ./prepare &&
             ./configure mingw64 --disable-shared --enable-static --enable-release --without-latex --disable-tests --prefix="$(pwd)/${{ env.installationPath }}" && 
-            mingw32-make.exe install
+            cd config/mingw && mingw32-make.exe install
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
