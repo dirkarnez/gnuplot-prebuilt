@@ -36,6 +36,7 @@ jobs:
             export PATH="${{ github.workspace }}/mingw64:${{ github.workspace }}/mingw64/bin:${{ github.workspace }}/msys64/usr/bin:/usr/bin" &&
             cd gnuplot &&
             gcc --version &&
+            ./prepare &&
             ./configure mingw64 --disable-shared --enable-static --enable-release --without-latex --disable-tests --prefix="$(pwd)/${{ env.installationPath }}" && 
             mingw32-make.exe install
             
